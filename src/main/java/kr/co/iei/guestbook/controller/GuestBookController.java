@@ -50,13 +50,6 @@ public class GuestBookController {
 
     @PostMapping(value="/insertComment")
     public String insertComment(Integer guestBookType, String guestbookInput, Integer memberNo, Integer guestWriterNo, String guestNickname, Model model) {  	
-    	//System.out.println(guestBookType);
-        //System.out.println(guestWriterNo);
-        //System.out.println(guestbookInput);
-        //System.out.println(memberNo);
-        //System.out.println(guestNickname);
-    	
-
         GuestBook gb = new GuestBook();
         
         gb.setGuestBookType(guestBookType);
@@ -88,11 +81,6 @@ public class GuestBookController {
             model.addAttribute("icon", "warning");
             model.addAttribute("loc");
         }
-
-//        model.addAttribute("title", "댓글 작성");
-//        model.addAttribute("msg", "댓글이 작성되었습니다.");
-//        model.addAttribute("icon", "success");
-//        model.addAttribute("loc", "/guest/guestbookList");
         return "common/msg";
     }
 
